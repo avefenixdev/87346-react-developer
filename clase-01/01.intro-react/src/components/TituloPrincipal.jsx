@@ -2,8 +2,6 @@
 
 const TituloPrincipal = (props) => {
     
-
-    
     // eslint-disable-next-line no-unused-vars
     const mostrarProps = () => {
         console.log(props) // {texto, color}
@@ -12,11 +10,10 @@ const TituloPrincipal = (props) => {
     }
 
     //mostrarProps()
-
-
-
   return (
-    <h2 style={{ color: props.color, textDecoration: 'underline' }}>{props.texto}</h2>
+    <h2 style={
+      { color: props.color, textDecoration: 'underline' }
+    }>{props.texto}</h2>
   )
 }
 
