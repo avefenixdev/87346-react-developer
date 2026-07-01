@@ -7,6 +7,13 @@ import Parrafo from './components/Parrafo'
 import TituloPrincipal from './components/TituloPrincipal'
 
 const App = () => {
+
+  const colorParrafos = [
+    {id: 1, color: 'darkblue'},
+    {id: 2, color: 'darkorange'},
+    {id: 3, color: 'darkkhaki'},
+  ]
+
   return (
     <Contenedor>
       <h1>Hola mundo desde react</h1>
@@ -18,7 +25,7 @@ const App = () => {
       
       <Parrafo 
         data="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur provident quam obcaecati quibusdam! Quibusdam neque sint, vero inventore quidem quos." 
-        color="darkblue"
+        color={colorParrafos[0].color}
       />
 
       <Imagen url="/imgs/avion-01.webp" textoAlternativo="Este es un avión" />
@@ -29,7 +36,7 @@ const App = () => {
       />
       <Parrafo 
         data="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, hic." 
-        color="darkorange"
+        color={colorParrafos[1].color}
       />
 
       <Imagen url="/imgs/avion-02.webp" textoAlternativo="Este es otro avión"  />
@@ -41,7 +48,7 @@ const App = () => {
       
       <Parrafo 
         data="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis doloremque nihil eum officiis quam maxime!"  
-        color="darkkhaki"
+        color={colorParrafos[2].color}
       />
 
       <Imagen url="/imgs/avion-03.webp" textoAlternativo="El último avión"  />
