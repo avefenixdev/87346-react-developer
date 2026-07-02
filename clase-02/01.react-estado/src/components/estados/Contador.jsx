@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 // rafce
-const Contador = () => {
+const Contador = ({ valorInicial:vi }) => {
 
     // * Un estado es una variable de js que está conectada al motor de javascript.
     // * A partir de la versión 16.8 de react aparecieron los hooks (ganchos) que permite de una manera sencilla agregar un estado a las funciones de js. Enganchar la función al core de React.
@@ -11,25 +11,38 @@ const Contador = () => {
     // * recibe un solo argumento para inicializar la variable conectada a react.
     // * En la posición 0 -> tengo el estado. la variable conectada a react.
     // * En la posición 1 -> tengo la función que modifica el estado.
-    
+    const valorInicial = vi
     //console.log(useState(22)[0]) // el estado
     //console.log(useState(22)[1]) // la función que modifica el estado
     // desestructuración
     //const arrayDosPosiciones = useState(22)
     //console.log(arrayDosPosiciones)
     //        0           1
-    const [contador, setContador] = useState(22)
+    const [contador, setContador] = useState(valorInicial)
     //console.log(contador) // arrayDosPosicion[0]
     //console.log(setContador) // arrayDosPosicion[1]
 
     const handleIncrementar = () => {
         // acá va el incremento
         console.log('handleIncrementar')
+        // contador++ // ! NO PUEDO MODIFICAR DIRECTAMENTE EL ESTADO
+        //contador = contador + 1 // ! NO PUEDO MODIFICAR DIRECTAMENTE EL ESTADO
+        //console.log(contador)
+        setContador(contador + 1) // PARA MODIFICAR EL ESTADO USO LA FUNCIÓN que me devuelve el useState
+        // Esta función además de modificar la variable (estado) notifica o avisa a react que tiene que volver a ejecutar la función (rerenderizar el componente)
     }
     // A los eventos de react por ejemplo el onClick -> le paso un callback
     //                  evento, callback
     // addEventListener('click', () => {})
     // onClick={callback}
+
+    const handleDecrementar = () => {
+        setContador(contador - 1) // ! SIEMPRE USO PARA MODIFICAR EL ESTADO LA FUNCION QUE ME DEVUELVE EL USESTATE
+    }
+
+    const handleReiniciar = () => {
+        setContador(valorInicial)
+    }
 
   return (
     <>
@@ -44,8 +57,21 @@ const Contador = () => {
             className="bg-blue-500 hover:bg-blue-600 rounded px-4 py-2 cursor-pointer me-2">
                 Incrementar
         </button>
-        <button className="bg-yellow-500 hover:bg-yellow-600 rounded px-4 py-2 cursor-pointer me-2">Decrementar</button>
-        <button className="bg-red-500 hover:bg-red-600 rounded px-4 py-2 cursor-pointer">Reiniciar</button>
+        {/* <button 
+            onClick={() => setContador(contador + 1)} 
+            className="bg-blue-500 hover:bg-blue-600 rounded px-4 py-2 cursor-pointer me-2">
+                Incrementar
+        </button> */}
+        <button
+            onClick={handleDecrementar}
+            className="bg-yellow-500 hover:bg-yellow-600 rounded px-4 py-2 cursor-pointer me-2">
+                Decrementar
+        </button>
+        <button 
+            onClick={handleReiniciar}
+            className="bg-red-500 hover:bg-red-600 rounded px-4 py-2 cursor-pointer">
+                Reiniciar
+        </button>
     </>
   )
 }

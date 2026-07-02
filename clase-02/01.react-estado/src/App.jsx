@@ -8,7 +8,8 @@ const App = () => {
     <Contenedor>
       <TituloPrincipal texto="Título Principal" />
       <TituloPrincipal texto="Otro título" />
-      <Contador />
+      <Contador valorInicial={22} />
+      <Contador valorInicial={33} />
     </Contenedor>
   )
 }
