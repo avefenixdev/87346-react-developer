@@ -1,10 +1,14 @@
 import Contenedor from "./components/Contenedor"
+import Contador from "./components/estados/Contador"
+import TituloPrincipal from "./components/TituloPrincipal"
 
 // rafce
 const App = () => {
   return (
     <Contenedor>
-      <h1>Título Principal</h1>
+      <TituloPrincipal texto="Título Principal" />
+      <TituloPrincipal texto="Otro título" />
+      <Contador />
     </Contenedor>
   )
 }
