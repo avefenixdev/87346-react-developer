@@ -1,7 +1,11 @@
+import Contenedor from "./components/Contenedor"
+
 // rafce
 const App = () => {
   return (
-    <div>App</div>
+    <Contenedor>
+      <h1>Título Principal</h1>
+    </Contenedor>
   )
 }
 
