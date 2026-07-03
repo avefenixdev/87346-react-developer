@@ -1,6 +1,10 @@
 // import TablaItem from "./TablaItem"
 
-const Tabla = () => {
+
+
+const Tabla = ({ products }) => {
+    //console.log(products)
+
     return (
         <div className="p-6 flex items-center justify-center">
             {/*  <!-- Contenedor Principal de la Tabla --> */}
@@ -27,66 +31,30 @@ const Tabla = () => {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100 text-sm text-gray-600">
+                            {
+                                products.map(product => (
+                                    <tr className="hover:bg-gray-50/70 transition-colors" key={product.id}>
+                                        <td className="px-6 py-4 font-medium text-gray-900">{product.nombre}</td>
+                                        <td className="px-6 py-4">
+                                            <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded-md font-medium">{product.categoria}</span>
+                                        </td>
+                                        <td className="px-6 py-4 font-mono font-medium text-gray-900">${product.precio}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap text-right space-x-2">
+                                            <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition">
+                                                Ver
+                                            </button>
+                                            <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-md transition">
+                                                Editar
+                                            </button>
+                                            <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 rounded-md transition">
+                                                Borrar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            }
 
-                            {/* <!-- Fila 1 --> */}
-                            <tr className="hover:bg-gray-50/70 transition-colors">
-                                <td className="px-6 py-4 font-medium text-gray-900">Teclado Mecánico RGB</td>
-                                <td className="px-6 py-4">
-                                    <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded-md font-medium">Electrónica</span>
-                                </td>
-                                <td className="px-6 py-4 font-mono font-medium text-gray-900">$89.99</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-right space-x-2">
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition">
-                                        Ver
-                                    </button>
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-md transition">
-                                        Editar
-                                    </button>
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 rounded-md transition">
-                                        Borrar
-                                    </button>
-                                </td>
-                            </tr>
 
-                            {/* <!-- Fila 2 --> */}
-                            <tr className="hover:bg-gray-50/70 transition-colors">
-                                <td className="px-6 py-4 font-medium text-gray-900">Campera Impermeable</td>
-                                <td className="px-6 py-4">
-                                    <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-md font-medium">Ropa</span>
-                                </td>
-                                <td className="px-6 py-4 font-mono font-medium text-gray-900">$120.00</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-right space-x-2">
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition">
-                                        Ver
-                                    </button>
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-md transition">
-                                        Editar
-                                    </button>
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 rounded-md transition">
-                                        Borrar
-                                    </button>
-                                </td>
-                            </tr>
-
-                            {/* <!-- Fila 3 --> */}
-                            <tr className="hover:bg-gray-50/70 transition-colors">
-                                <td className="px-6 py-4 font-medium text-gray-900">Licencia de Editor IDE</td>
-                                <td className="px-6 py-4">
-                                    <span className="bg-amber-50 text-amber-700 text-xs px-2 py-1 rounded-md font-medium">Software</span>
-                                </td>
-                                <td className="px-6 py-4 font-mono font-medium text-gray-900">$45.50</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-right space-x-2">
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition">
-                                        Ver
-                                    </button>
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-md transition">
-                                        Editar
-                                    </button>
-                                    <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 rounded-md transition">
-                                        Borrar
-                                    </button>
-                                </td>
-                            </tr>
 
                         </tbody>
                     </table>
