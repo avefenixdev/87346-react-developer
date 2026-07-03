@@ -11,7 +11,6 @@ import NoEncontrado from './pages/NoEncontrado.jsx'
 import Contenedor from './components/Contenedor.jsx'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
-import Rutas from './routes/Rutas.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,16 +19,14 @@ createRoot(document.getElementById('root')).render(
 
         <Navbar />
         
-        {/* <Routes> */} {/* switch */}
-          {/* <Route path='/' element={<App />} /> */} {/* case */}
-          {/* <Route path='/productos' element={<Productos />} /> */} {/* case */}
-          {/* <Route path='/servicios' element={<Servicios />} /> */} {/* case */}
-         {/*  <Route path='/nosotros' element={<Nosotros />} />  */}{/* case */}
-          {/* <Route path='/contacto' element={<Contacto />} />  */}{/* case */}
-          {/* <Route path='*' element={<NoEncontrado />} */} /> {/* default */}
-        {/* </Routes> */}
-
-        <Rutas />
+        <Routes> {/* switch */}
+          <Route path='/' element={<App />} /> {/* case */}
+          <Route path='/productos' element={<Productos />} /> {/* case */}
+          <Route path='/servicios' element={<Servicios />} /> {/* case */}
+          <Route path='/nosotros' element={<Nosotros />} /> {/* case */}
+          <Route path='/contacto' element={<Contacto />} /> {/* case */}
+          <Route path='*' element={<NoEncontrado />} /> {/* default */}
+        </Routes>
 
         <Footer />
 
