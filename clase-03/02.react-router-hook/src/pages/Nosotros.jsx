@@ -1,0 +1,13 @@
+import TituloPrincipal from "../components/TituloPrincipal"
+
+const Nosotros = () => {
+  return (
+    <>
+      <TituloPrincipal texto="Nosotros" />
+      <hr />
+      <p className="my-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus vel inventore est repellat sed laborum alias minus, ab id nobis.</p>
+    </>
+  )
+}
+
+export default Nosotros
