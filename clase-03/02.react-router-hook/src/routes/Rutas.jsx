@@ -6,7 +6,6 @@ import Nosotros from "../pages/Nosotros"
 import NoEncontrado from "../pages/NoEncontrado"
 import Contacto from "../pages/Contacto"
 
-
 const Rutas = () => {
 
     const rutas = useRoutes(
