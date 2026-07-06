@@ -18,7 +18,11 @@ const Tabla = ({ products }) => {
                         <h3 className="text-lg font-bold text-gray-800">Productos Registrados</h3>
                         <p className="text-sm text-gray-500">Lista completa de los productos en inventario.</p>
                     </div>
-                    <span className="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-full">3 Productos</span>
+                    <span 
+                        className="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-full"
+                    >
+                            {products.length > 0 ? `${products.length} Productos` : "0 productos" }
+                    </span>
                 </div>
 
                 {/* <!-- Contenedor Responsive --> */}
@@ -33,13 +37,23 @@ const Tabla = ({ products }) => {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100 text-sm text-gray-600">
+
+
+
                             {
-                                products.map(product => (
-                                   <TablaItem product={product} key={product.id} />
-                                ))
+                                products.length > 0 ? (
+                                    products.map(product => (
+                                        <TablaItem product={product} key={product.id} />
+                                    ))
+                                )
+                                
+                                : (
+                                    <tr className="hover:bg-gray-50/70 transition-colors">
+                                        <td className="px-6 py-4 font-medium text-gray-900">No hay productos</td>
+                                    </tr>
+                                )
+                                
                             }
-
-
 
                         </tbody>
                     </table>
@@ -47,7 +61,7 @@ const Tabla = ({ products }) => {
 
                 {/* <!-- Footer Opcional (Paginación) --> */}
                 <div className="px-6 py-3.5 border-t border-gray-100 bg-gray-50/30 flex justify-between items-center text-xs text-gray-500">
-                    <span>Mostrando 3 de 3 registros</span>
+                    <span>Mostrando {products.length} de {products.length} registros</span>
                     <div className="inline-flex space-x-1">
                         <button className="px-2.5 py-1 border border-gray-200 rounded hover:bg-gray-50 transition">Ant.</button>
                         <button className="px-2.5 py-1 border border-gray-200 rounded hover:bg-gray-50 transition">Sig.</button>
