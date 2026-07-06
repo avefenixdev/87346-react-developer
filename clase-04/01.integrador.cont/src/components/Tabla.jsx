@@ -4,7 +4,7 @@ import TablaItem from "./TablaItem"
 
 
 
-const Tabla = ({ products, handlerRemove }) => {
+const Tabla = ({ products, handlerRemove, setProductoAEditar }) => {
     //console.log(products)
 
     return (
@@ -43,7 +43,12 @@ const Tabla = ({ products, handlerRemove }) => {
                             {
                                 products.length > 0 ? (
                                     products.map(product => (
-                                        <TablaItem product={product} key={product.id} handlerRemove={handlerRemove} />
+                                        <TablaItem 
+                                            product={product} 
+                                            key={product.id} 
+                                            handlerRemove={handlerRemove}
+                                            setProductoAEditar={setProductoAEditar}
+                                        />
                                     ))
                                 )
                                 

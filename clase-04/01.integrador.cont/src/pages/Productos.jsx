@@ -8,6 +8,7 @@ import productos from "../constants/productos"
 const Productos = () => {
 
   const [products, setProducts] = useState(productos)
+  const [productoAEditar, setProductoAEditar] = useState(null)
 
   const handlerCreate = (productoNuevo) => {
     console.log(productoNuevo)
@@ -41,8 +42,8 @@ const Productos = () => {
       <TituloPrincipal texto="CRUD Productos" />
       <hr />
       <p className="my-3">Ejemplo integrador para trabajar las props y estado en REACT</p>
-      <Formulario handlerCreate={handlerCreate} /> 
-      <Tabla products={products} handlerRemove={handlerRemove} />
+      <Formulario handlerCreate={handlerCreate} productoAEditar={productoAEditar} setProductoAEditar={setProductoAEditar} /> 
+      <Tabla products={products} handlerRemove={handlerRemove} setProductoAEditar={setProductoAEditar} />
     </>
   )
 }

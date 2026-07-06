@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const Formulario = ({ handlerCreate }) => {
+const Formulario = ({ handlerCreate, productoAEditar, setProductoAEditar }) => {
 
     // variable de js
     const formInicial = {
@@ -9,12 +9,25 @@ const Formulario = ({ handlerCreate }) => {
         categoria: '',
         precio: 0
     }
-
+    
     const [form, setForm] = useState(formInicial)
     console.log(form) // Estado de react.
 
+    // hook -> useEffect
+    useEffect(() => {
+        console.log('Cambio la variable')
+        if (productoAEditar) {
+            setForm(productoAEditar)
+        }  else {
+            setForm(formInicial)
+        } 
+    }, [productoAEditar])
+
+
+
     const handleReset = () => {
         setForm(formInicial)
+        setProductoAEditar(null)
     }
 
     const handleSubmit = (e) => {
@@ -127,6 +140,7 @@ const Formulario = ({ handlerCreate }) => {
                     <div className="flex items-center justify-end space-x-3 pt-2">
                         {/* Botón Reset */}
                         <button
+                            onClick={handleReset}
                             type="reset"
                             className="px-5 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-200"
                         >
