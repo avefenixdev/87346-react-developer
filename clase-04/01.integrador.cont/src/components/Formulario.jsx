@@ -1,5 +1,48 @@
+import { useState } from "react"
 
-const Formulario = () => {
+const Formulario = ({ handlerCreate }) => {
+
+    // variable de js
+    const formInicial = {
+        id: null,
+        nombre: '',
+        categoria: '',
+        precio: 0
+    }
+
+    const [form, setForm] = useState(formInicial)
+    console.log(form) // Estado de react.
+
+    const handleReset = () => {
+        setForm(formInicial)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log('Enviando la data...')
+
+        //console.log(form)
+        handlerCreate(form) // <---- form <-- productoNuevo
+        // Se cargó el producto en la tabla y recién ahí limpio el formulario
+        handleReset()
+    }
+
+    const handleChange = (e) => {
+        //console.log(e.target.name)
+        //console.log(e.target.value)
+
+        const formNuevo = {
+            ...form,
+            [e.target.name]: (e.target.name === 'precio') ? Number(e.target.value) : e.target.value
+        }
+        //console.log(formNuevo)
+        setForm(formNuevo) // cambiando el estado -> sin modificar el anterior
+        //console.log(form) 
+       
+
+    }
+
+
     return (
         <div className="flex items-center justify-center p-4"> 
             {/* Contenedor del Formulario */}
@@ -10,17 +53,19 @@ const Formulario = () => {
                     <p className="text-sm text-gray-500">Ingresa los detalles del producto a continuación.</p>
                 </div>
 
-                <form action="#" method="POST" className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5">
 
                     {/* Input: Nombre de producto */}
                     <div>
                         <label htmlFor="product_name" className="block text-sm font-medium text-gray-700 mb-1">Nombre del Producto</label>
                         <input
+                            onChange={handleChange}
                             type="text"
                             id="product_name"
-                            name="product_name"
+                            name="nombre"
                             placeholder="Ej. Teclado Mecánico RGB"
                             required
+                            value={form.nombre}
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
                         />
                     </div>
@@ -28,9 +73,10 @@ const Formulario = () => {
                     {/* Input: Categoría de producto */}
                     <div>
                         <label htmlFor="product_category" className="block text-sm font-medium text-gray-700 mb-1">Categoría</label>
-                        <select
+                        {/* <select
                             id="product_category"
-                            name="product_category"
+                            name="categoria"
+                            onChange={handleChange}
                             required
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 bg-white"
                         >
@@ -39,7 +85,17 @@ const Formulario = () => {
                             <option value="clothing">Ropa</option>
                             <option value="home">Hogar</option>
                             <option value="software">Software</option>
-                        </select>
+                        </select> */}
+                        <input
+                            onChange={handleChange}
+                            type="text"
+                            id="product_name"
+                            name="categoria"
+                            placeholder="Ej. Electronica, Software"
+                            required
+                            value={form.categoria}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
+                        />
                     </div>
 
                     {/* Input: Precio de producto */}
@@ -50,12 +106,14 @@ const Formulario = () => {
                                 <span className="text-gray-500 sm:text-sm">$</span>
                             </div>
                             <input
+                                onChange={handleChange}
                                 type="number"
                                 id="product_price"
-                                name="product_price"
+                                name="precio"
                                 step="0.01"
                                 min="0"
                                 placeholder="0.00"
+                                value={form.precio}
                                 required
                                 className="w-full pl-7 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200"
                             />
