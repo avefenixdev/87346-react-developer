@@ -4,3 +4,9 @@
 /* 2. Un hook personalizado es una función de javascript. Con el nombre que use para el archivo */
 /* 3. Dentro de la función creada en el paso 2, tengo que si o si, utilizar alguno de los hooks buildin (Incomporados en react)... useState, useEffect... */
 /* 4. Tiene que exportarse para poder utilizarse en los componentes */
+
+const useContador = () => {
+
+}
+
+export default useContador
