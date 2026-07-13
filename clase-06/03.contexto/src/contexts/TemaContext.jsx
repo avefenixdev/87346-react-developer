@@ -15,7 +15,6 @@ const TemaContext = createContext()
 // ! 2do paso - Armado del Provider (Va hacer global los estados o lo que quiera hacer global)
 const TemaProvider = ( { children } ) => {
     
-
     // Todo lo que quiera compartir al exterior
     const data = {
 
