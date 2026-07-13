@@ -1,4 +1,5 @@
 import Contador from "../components/Contador"
+import ContadorCustomHook from "../components/ContadorCustomHook"
 
 const CustomHook = () => {
   return (
@@ -11,6 +12,8 @@ const CustomHook = () => {
         <Contador /> 
 
         <h2>Componente con custom hooks</h2>
+
+        <ContadorCustomHook />
     
     </>
   )

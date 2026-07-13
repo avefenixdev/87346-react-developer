@@ -5,8 +5,27 @@
 /* 3. Dentro de la función creada en el paso 2, tengo que si o si, utilizar alguno de los hooks buildin (Incomporados en react)... useState, useEffect... */
 /* 4. Tiene que exportarse para poder utilizarse en los componentes */
 
-const useContador = () => {
+import { useState } from "react"
 
+const useContador = (valorInicial) => {
+    
+    const [contador, setContador] = useState(valorInicial)
+
+    const handleIncremento = () => {
+        //contador++
+        setContador(contador + 1)
+    }
+
+    const handleDecremento = () => {
+        setContador(contador - 1)
+    }
+
+    const handleReinicio = () => {
+        setContador(valorInicial)
+    }
+    //         0             1                 2               3
+    return [contador, handleIncremento, handleDecremento, handleReinicio] // Puede un array o un objeto
+    // return {contador, handleIncremento, handleDecremento, handleReinicio}
 }
 
 export default useContador
