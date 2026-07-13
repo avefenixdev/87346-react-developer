@@ -6,6 +6,7 @@ import Contacto from "../pages/Contacto"
 import NoEncontrado from "../pages/NoEncontrado"
 import EfectoSecundario from "../pages/EfectoSecundario"
 import CustomHook from "../pages/CustomHook"
+import Contexto from "../pages/Contexto"
 
 
 
@@ -20,6 +21,10 @@ const Rutas = () => {
             {
                 path: '/custom-hook',
                 element: <CustomHook />
+            },
+            {
+                path: '/context',
+                element: <Contexto />
             },
             {
                 path: '/productos',
