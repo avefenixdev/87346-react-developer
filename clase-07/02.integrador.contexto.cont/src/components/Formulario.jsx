@@ -3,7 +3,7 @@ import useProductos from "../hooks/useProductos"
 
 const Formulario = () => {
 
-    const { handlerCreate, productoAEditar, setProductoAEditar } = useProductos()
+    const { handlerCreate, handlerEdit, productoAEditar, setProductoAEditar } = useProductos()
 
     // variable de js
     const formInicial = {
@@ -37,8 +37,13 @@ const Formulario = () => {
         e.preventDefault()
         console.log('Enviando la data...')
 
+        if ( form.id === null ) {
+            handlerCreate(form) // <---- form <-- productoNuevo -> tiene null el id
+        } else {
+            handlerEdit(form)  // <---- form <-- productoEditado -> tiene id
+        }
+
         //console.log(form)
-        handlerCreate(form) // <---- form <-- productoNuevo
         // Se cargó el producto en la tabla y recién ahí limpio el formulario
         handleReset()
     }

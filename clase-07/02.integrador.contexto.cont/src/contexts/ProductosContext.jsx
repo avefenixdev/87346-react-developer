@@ -20,7 +20,12 @@ const ProductosProvider = ( { children } ) => {
         setProducts(nuevoArrayProductos)
     }
 
-    const handlerEdit = () => {
+    const handlerEdit = (productoEditado) => {
+        console.log(productoEditado)
+        debugger
+        const nuevoEstadoProductos = products.map(prod => prod.id === productoEditado.id ? productoEditado : prod)
+        console.log(nuevoEstadoProductos) // Un nuevo array con todos los productos sin editar más el producto editado
+        setProducts(nuevoEstadoProductos)
 
     }
     
@@ -34,6 +39,14 @@ const ProductosProvider = ( { children } ) => {
 
     }
 
+    const getProductoById = (id) => {
+        id = Number(id)
+        //console.log(id)
+        const producto = products.find(prod => prod.id === id)
+        //console.log(producto)
+        return producto 
+    }
+
 
     const data = {
         products,
@@ -41,7 +54,8 @@ const ProductosProvider = ( { children } ) => {
         handlerCreate,
         handlerEdit,
         handlerRemove,
-        setProductoAEditar
+        setProductoAEditar,
+        getProductoById
     }
 
     return <ProductosContext.Provider value={data}>{ children }</ProductosContext.Provider>

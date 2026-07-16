@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import useProductos from "../hooks/useProductos";
 import handlerNotificacion from "../utils/handler-notificacion";
 
@@ -32,9 +33,9 @@ const TablaItem = ({ product }) => { // props = { product }
       </td>
       <td className="px-6 py-4 font-mono font-medium text-gray-900">${product.precio}</td>
       <td className="px-6 py-4 whitespace-nowrap text-right space-x-2">
-        <button className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition">
+        <Link to={`detalle/${product.id}`} className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition">
           Ver
-        </button>
+        </Link>
         <button onClick={() => handlerActualizar(product)} className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-md transition">
           Editar
         </button>
