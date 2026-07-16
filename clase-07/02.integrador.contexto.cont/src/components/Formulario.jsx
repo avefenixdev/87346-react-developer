@@ -38,7 +38,7 @@ const Formulario = () => {
         console.log('Enviando la data...')
 
         if ( form.id === null ) {
-            handlerCreate(form) // <---- form <-- productoNuevo -> tiene null el id
+            handlerCreate(form) // <---- form <-- productoNuevo -> tiene null el
         } else {
             handlerEdit(form)  // <---- form <-- productoEditado -> tiene id
         }
@@ -110,7 +110,7 @@ const Formulario = () => {
                         <input
                             onChange={handleChange}
                             type="text"
-                            id="product_name"
+                            id="product_category"
                             name="categoria"
                             placeholder="Ej. Electronica, Software"
                             required
