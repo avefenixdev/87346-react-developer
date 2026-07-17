@@ -20,7 +20,6 @@ const ProductosDetalle = () => {
   const handlerVolverAListado = () => {
     navigate('/productos')
   }
-  
 
   return (
     <>
