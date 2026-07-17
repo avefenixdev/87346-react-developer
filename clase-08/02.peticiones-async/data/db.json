@@ -1,0 +1,8 @@
+{
+    "productos": [
+        { "id": 1, "nombre": "PC", "categoria": "Informatica", "precio": 222.50 },
+        { "id": 2, "nombre": "Notebook", "categoria": "Informatica", "precio": 523.50 },
+        { "id": 3, "nombre": "Tablet", "categoria": "Electro", "precio": 432.50 },
+        { "id": 4, "nombre": "Celular", "categoria": "Electro", "precio": 1234.50 }
+    ]
+}
