@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-     <main className="container mx-auto">
+     <main className="min-h-screen bg-linear-to-br from-gray-950 via-slate-900 to-black flex items-center justify-center px-6 text-white">
       <Rutas />
      </main>
     </BrowserRouter>
