@@ -41,7 +41,7 @@ const Usuarios = () => {
 
         usuarios ? (
           usuarios.map(element => (
-            <p>{element.name}</p>
+            <p key={element.id}>{element.name}</p>
           )))
         : (
           <Spinner />
