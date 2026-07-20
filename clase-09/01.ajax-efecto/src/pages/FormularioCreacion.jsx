@@ -1,7 +1,36 @@
 
+import { useState } from "react";
 import { Link } from "react-router";
 
 function FormularioCreacion() {
+
+    const formuInicial = {
+        id: null,
+        name: '',
+        username: '',
+        phone: '',
+        email: '',
+        website: ''
+    }
+
+    const [formu, setForm] = useState(formuInicial)
+    console.log(formu)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
+    const handleChange = (e) => {
+
+        const nuevoFormu = {
+            ...formu,
+            [e.target.name]: e.target.value
+        }
+
+        setForm(nuevoFormu)
+
+    }
+
     return (
         <div className="mx-auto max-w-3xl p-6">
 
@@ -33,7 +62,7 @@ function FormularioCreacion() {
 
                 {/* Formulario */}
 
-                <form className="space-y-6 p-8">
+                <form onSubmit={handleSubmit} className="space-y-6 p-8">
 
                     <div>
 
@@ -45,6 +74,9 @@ function FormularioCreacion() {
                         </label>
 
                         <input
+                            onChange={handleChange}
+                            value={formu.name}
+                            name="name"
                             id="name"
                             type="text"
                             placeholder="Ingrese el nombre completo"
@@ -63,6 +95,9 @@ function FormularioCreacion() {
                         </label>
 
                         <input
+                            onChange={handleChange}
+                            value={formu.username}
+                            name="username"
                             id="username"
                             type="text"
                             placeholder="Ingrese el nombre de usuario"
@@ -81,6 +116,9 @@ function FormularioCreacion() {
                         </label>
 
                         <input
+                            onChange={handleChange}
+                            value={formu.email}
+                            name="email"
                             id="email"
                             type="email"
                             placeholder="usuario@email.com"
@@ -99,6 +137,9 @@ function FormularioCreacion() {
                         </label>
 
                         <input
+                            onChange={handleChange}
+                            value={formu.phone}
+                            name="phone"
                             id="phone"
                             type="tel"
                             placeholder="+54 11 1234-5678"
@@ -117,6 +158,9 @@ function FormularioCreacion() {
                         </label>
 
                         <input
+                            onChange={handleChange}
+                            value={formu.website}
+                            name="website"
                             id="website"
                             type="url"
                             placeholder="https://www.ejemplo.com"
