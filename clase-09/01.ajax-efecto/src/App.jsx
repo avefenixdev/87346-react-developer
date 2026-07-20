@@ -120,25 +120,28 @@ const App = () => {
 
             <tbody class="divide-y divide-slate-100">
 
-                <tr class="hover:bg-slate-50">
+              {
+
+                usuarios && usuarios.map(us => (
+                  <tr class="hover:bg-slate-50">
 
                     <td class="px-6 py-4 font-medium text-slate-700">
-                        Juan Pérez
+                        {us.name}
                     </td>
 
                     <td class="px-6 py-4 text-slate-600">
-                        jperez
+                        {us.username}
                     </td>
 
                     <td class="px-6 py-4 text-slate-600">
-                        juan@email.com
+                        {us.email}
                     </td>
 
                     <td class="px-6 py-4">
 
                         <div class="flex justify-center gap-2">
 
-                           {/*  <!-- Ver --> */}
+                            {/*  <!-- Ver --> */}
                             <button
                                 class="rounded-lg border border-slate-300 p-2 text-slate-600 transition hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600"
                                 title="Ver">
@@ -163,7 +166,10 @@ const App = () => {
 
                     </td>
 
-                </tr>
+                  </tr>
+                ))
+
+              }
 
                {/*  <!-- Más registros --> */}
 
