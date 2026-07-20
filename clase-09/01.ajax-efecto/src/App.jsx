@@ -143,7 +143,7 @@ const App = () => {
 
                             {/*  <!-- Ver --> */}
                             <button
-                                class="rounded-lg border border-slate-300 p-2 text-slate-600 transition hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600"
+                                class="cursor-pointer rounded-lg border border-slate-300 p-2 text-slate-600 transition hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600"
                                 title="Ver">
                                 👁
                             </button>
