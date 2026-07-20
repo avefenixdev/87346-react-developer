@@ -18,7 +18,7 @@ const userService = () => {
          try {
       
             const usuariosjsonp = await httpClient(url)
-            console.log(usuariosjsonp)
+            //console.log(usuariosjsonp)
             return usuariosjsonp
             
         } catch (error) {

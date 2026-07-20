@@ -38,7 +38,7 @@ const App = () => {
       const data = await userService().getUsers()
       setUsuarios(data)
 
-      console.log(data)
+      //console.log(data)
     }
 
     load()
