@@ -9,7 +9,8 @@ const UsuarioDetalle = () => {
     const { id } = useParams()
     /* console.log(id) */
     console.log(usuario)
-    
+
+    // Esta función no dice si es NaN o no. Si es NaN -> true | Si no es NaN -> false
     const esUnNaN = (idParams) => {
         return isNaN(Number(idParams))
     }

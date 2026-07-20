@@ -2,6 +2,7 @@ import { useRoutes } from "react-router"
 import App from "../App"
 import UsuarioDetalle from "../pages/UsuarioDetalle"
 import NoEncontrado from "../pages/NoEncontrado"
+import FormularioCreacion from "../pages/FormularioCreacion"
 
 const Rutas = () => {
 
@@ -14,6 +15,10 @@ const Rutas = () => {
             {
                 path: '/detalle/:id',
                 element: <UsuarioDetalle />
+            },
+            {
+                path: '/formu-creacion',
+                element: <FormularioCreacion />
             },
             {
                 path: '*',

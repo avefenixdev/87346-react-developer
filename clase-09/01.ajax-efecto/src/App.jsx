@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import userService from "./services/userService"
-import { useNavigate } from "react-router"
+import { Link, useNavigate } from "react-router"
 
 const App = () => {
 
@@ -75,10 +75,11 @@ const App = () => {
             </p>
         </div>
 
-        <button
+        <Link
+            to="/formu-creacion"
             className="rounded-lg bg-blue-600 px-5 py-3 font-medium text-white transition hover:bg-blue-700">
             + Nuevo Usuario
-        </button>
+        </Link>
 
     </div>
 
