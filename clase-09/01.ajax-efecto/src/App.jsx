@@ -53,175 +53,160 @@ const App = () => {
   */
 
   return (
-    <>
+    <div class="w-full rounded-xl border border-slate-200 bg-white shadow-sm">
 
-      <div class="w-full rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+    {/* <!-- Header --> */}
+    <div class="flex flex-col gap-4 border-b border-slate-200 p-6 md:flex-row md:items-center md:justify-between">
 
-        {/* <!-- Header --> */}
-        <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
-          <div>
-            <h2 class="text-xl font-semibold text-slate-800">
-              Usuarios
-            </h2>
+        <div>
+            <h1 class="text-2xl font-bold text-slate-800">
+                Usuarios
+            </h1>
+
             <p class="text-sm text-slate-500">
-              Lista de usuarios registrados.
+                Administra los usuarios del sistema.
             </p>
-          </div>
-
-          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
-            5 Usuarios
-          </span>
         </div>
 
-        {/* <!-- Tabla --> */}
-        <div class="overflow-x-auto">
-          <table class="min-w-full divide-y divide-slate-200">
+        <button
+            class="rounded-lg bg-blue-600 px-5 py-3 font-medium text-white transition hover:bg-blue-700">
+            + Nuevo Usuario
+        </button>
+
+    </div>
+
+    {/* <!-- Barra de búsqueda --> */}
+    <div class="flex flex-col gap-4 border-b border-slate-200 p-6 md:flex-row md:items-center md:justify-between">
+
+        <input
+            type="text"
+            placeholder="Buscar usuario..."
+            class="w-full rounded-lg border border-slate-300 px-4 py-2 outline-none transition focus:border-blue-500 md:max-w-sm"/>
+
+        <span class="text-sm text-slate-500">
+            5 usuarios encontrados
+        </span>
+
+    </div>
+
+    {/* <!-- Tabla --> */}
+    <div class="overflow-x-auto">
+
+        <table class="min-w-full">
 
             <thead class="bg-slate-50">
-              <tr>
-                <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  Nombre
-                </th>
 
-                <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  Usuario
-                </th>
+                <tr>
 
-                <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  Email
-                </th>
-              </tr>
+                    <th class="px-6 py-4 text-left text-xs font-semibold uppercase text-slate-500">
+                        Nombre
+                    </th>
+
+                    <th class="px-6 py-4 text-left text-xs font-semibold uppercase text-slate-500">
+                        Usuario
+                    </th>
+
+                    <th class="px-6 py-4 text-left text-xs font-semibold uppercase text-slate-500">
+                        Email
+                    </th>
+
+                    <th class="px-6 py-4 text-center text-xs font-semibold uppercase text-slate-500">
+                        Acciones
+                    </th>
+
+                </tr>
+
             </thead>
 
-            <tbody class="divide-y divide-slate-100 bg-white">
+            <tbody class="divide-y divide-slate-100">
 
-              <tr class="transition-colors hover:bg-slate-50">
-                <td class="px-6 py-4">
-                  <div class="flex items-center gap-3">
+                <tr class="hover:bg-slate-50">
 
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 font-semibold text-blue-700">
-                      J
-                    </div>
+                    <td class="px-6 py-4 font-medium text-slate-700">
+                        Juan Pérez
+                    </td>
 
-                    <span class="font-medium text-slate-700">
-                      Juan Pérez
-                    </span>
+                    <td class="px-6 py-4 text-slate-600">
+                        jperez
+                    </td>
 
-                  </div>
-                </td>
+                    <td class="px-6 py-4 text-slate-600">
+                        juan@email.com
+                    </td>
 
-                <td class="px-6 py-4 text-slate-600">
-                  jperez
-                </td>
+                    <td class="px-6 py-4">
 
-                <td class="px-6 py-4 text-slate-600">
-                  juan@email.com
-                </td>
-              </tr>
+                        <div class="flex justify-center gap-2">
 
-              <tr class="transition-colors hover:bg-slate-50">
-                <td class="px-6 py-4">
-                  <div class="flex items-center gap-3">
+                           {/*  <!-- Ver --> */}
+                            <button
+                                class="rounded-lg border border-slate-300 p-2 text-slate-600 transition hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600"
+                                title="Ver">
+                                👁
+                            </button>
 
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 font-semibold text-green-700">
-                      M
-                    </div>
+                            {/* <!-- Editar --> */}
+                            <button
+                                class="rounded-lg border border-slate-300 p-2 text-slate-600 transition hover:border-amber-500 hover:bg-amber-50 hover:text-amber-600"
+                                title="Editar">
+                                ✏️
+                            </button>
 
-                    <span class="font-medium text-slate-700">
-                      María Gómez
-                    </span>
+                            {/* <!-- Eliminar --> */}
+                            <button
+                                class="rounded-lg border border-slate-300 p-2 text-slate-600 transition hover:border-red-500 hover:bg-red-50 hover:text-red-600"
+                                title="Eliminar">
+                                🗑
+                            </button>
 
-                  </div>
-                </td>
+                        </div>
 
-                <td class="px-6 py-4 text-slate-600">
-                  mgomez
-                </td>
+                    </td>
 
-                <td class="px-6 py-4 text-slate-600">
-                  maria@email.com
-                </td>
-              </tr>
+                </tr>
 
-              <tr class="transition-colors hover:bg-slate-50">
-                <td class="px-6 py-4">
-                  <div class="flex items-center gap-3">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 font-semibold text-purple-700">
-                      L
-                    </div>
-
-                    <span class="font-medium text-slate-700">
-                      Lucas Fernández
-                    </span>
-
-                  </div>
-                </td>
-
-                <td class="px-6 py-4 text-slate-600">
-                  lfernandez
-                </td>
-
-                <td class="px-6 py-4 text-slate-600">
-                  lucas@email.com
-                </td>
-              </tr>
-
-              <tr class="transition-colors hover:bg-slate-50">
-                <td class="px-6 py-4">
-                  <div class="flex items-center gap-3">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 font-semibold text-orange-700">
-                      A
-                    </div>
-
-                    <span class="font-medium text-slate-700">
-                      Ana Torres
-                    </span>
-
-                  </div>
-                </td>
-
-                <td class="px-6 py-4 text-slate-600">
-                  atorres
-                </td>
-
-                <td class="px-6 py-4 text-slate-600">
-                  ana@email.com
-                </td>
-              </tr>
-
-              <tr class="transition-colors hover:bg-slate-50">
-                <td class="px-6 py-4">
-                  <div class="flex items-center gap-3">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 font-semibold text-pink-700">
-                      C
-                    </div>
-
-                    <span class="font-medium text-slate-700">
-                      Carlos Ruiz
-                    </span>
-
-                  </div>
-                </td>
-
-                <td class="px-6 py-4 text-slate-600">
-                  cruiz
-                </td>
-
-                <td class="px-6 py-4 text-slate-600">
-                  carlos@email.com
-                </td>
-              </tr>
+               {/*  <!-- Más registros --> */}
 
             </tbody>
 
-          </table>
+        </table>
+
+    </div>
+
+    {/* <!-- Footer --> */}
+    <div class="flex flex-col items-center justify-between gap-4 border-t border-slate-200 p-6 text-sm text-slate-500 md:flex-row">
+
+        <span>
+            Mostrando 1 - 10 de 52 usuarios
+        </span>
+
+        <div class="flex gap-2">
+
+            <button class="rounded-lg border px-3 py-2 hover:bg-slate-100">
+                Anterior
+            </button>
+
+            <button class="rounded-lg bg-blue-600 px-3 py-2 text-white">
+                1
+            </button>
+
+            <button class="rounded-lg border px-3 py-2 hover:bg-slate-100">
+                2
+            </button>
+
+            <button class="rounded-lg border px-3 py-2 hover:bg-slate-100">
+                3
+            </button>
+
+            <button class="rounded-lg border px-3 py-2 hover:bg-slate-100">
+                Siguiente
+            </button>
+
         </div>
 
-      </div>
-    </>
+    </div>
+
+</div>
   )
 }
 
