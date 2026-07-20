@@ -1,6 +1,18 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function IdDeUsuarioInvalido() {
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        if (window.history.length > 1) {
+            navigate(-1);
+        } else {
+            navigate("/");
+        }
+    };
+
+
     return (
         <div className="flex min-h-[70vh] items-center justify-center px-6">
             <div className="w-full max-w-lg rounded-xl border border-slate-200 bg-white p-10 text-center shadow-sm">
@@ -31,7 +43,7 @@ function IdDeUsuarioInvalido() {
                     </Link>
 
                     <button
-                        onClick={() => window.history.back()}
+                        onClick={handleBack}
                         className="rounded-lg border border-slate-300 px-5 py-3 font-medium text-slate-700 transition hover:bg-slate-100"
                     >
                         Regresar

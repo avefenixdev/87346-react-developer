@@ -27,8 +27,18 @@ const userService = () => {
 
     }
 
-    const getByID = () => {
+    const getByID = async (id) => {
 
+        try {
+
+            const urlByID = url + id
+      
+            const usuariobyIDJsonP = await httpClient(urlByID)
+            return usuariobyIDJsonP
+            
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     const createUser = () => {
