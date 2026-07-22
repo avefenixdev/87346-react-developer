@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { decrementar, incrementar, incrementarPorValor } from "../store/slices/contador"
+import Clientes from "../components/Clientes"
 
 const Redux = () => {
 
@@ -49,6 +50,10 @@ const Redux = () => {
         className="bg-red-500 hover:bg-red-700 p-3 px-4 rounded cursor-pointer text-white">
           IncrementarPorValor
       </button>
+
+      <hr />
+
+      <Clientes />
     </>
   )
 }
