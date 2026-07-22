@@ -14,3 +14,9 @@
 npm install @reduxjs/toolkit
 npm install react-redux
 ```
+
+# Middleware Thunk -> Para trabajar con redux en forma asincrónica
+
+<https://github.com/reduxjs/redux-thunk>
+
+Nota: En redux toolkit ya está instalado e incoporado dentro de la librería.

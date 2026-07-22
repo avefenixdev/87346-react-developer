@@ -15,7 +15,9 @@ export const contadorSlice = createSlice( // export para incorporarlo dentro del
                 estado.contador = estado.contador - 1
             },
             incrementarPorValor: (estado, accion) => {
-
+                //console.log(estado)
+                //console.log(accion) // { type, payload }
+                estado.contador = estado.contador + accion.payload // 77 -> 99
             }
         }
     }
